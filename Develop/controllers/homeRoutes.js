@@ -35,7 +35,7 @@ router.get('/projects/:id', async (req, res) => {
   
       const project = projectData.get({ plain: true });
   
-      res.render('project', { project, loggedIn: req.session.loggedIn });
+      res.render('project', { project });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -63,10 +63,10 @@ router.get('/profile', withAuth, async (req, res) => {
 
 
   router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/profile');
-      return;
-    }
+    // if (req.session.loggedIn) {
+    //   res.redirect('/profile');
+    //   return;
+    // }
   
     res.render('login');
   });
