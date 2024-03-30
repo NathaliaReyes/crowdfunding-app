@@ -13,12 +13,16 @@
     <h1>
       💸 Fund My Project!
     </h1>
-    {{#if loggedIn}}
     <nav>
+    {{#if loggedIn}}
       <a href="/profile" class="btn">Profile</a>
       <button class="btn" id="logout">logout</button>
-    </nav>
+    {{else}}
+      <a href="/login">Login</a>
+    
     {{/if}}
+    </nav>
+    
   </header>
   <main class="container container-fluid mt-5">
     {{{ body }}}

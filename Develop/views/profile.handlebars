@@ -2,7 +2,7 @@
 
 <div class="row justify-space-between-md">
   <div class="project">
-    <h1>Welcome {{user.name}}!</h1>
+    <h1>Welcome {{name}}!</h1>
     <h4>Create a New Project:</h4>
     <form class="form project-form">
       <div class="form-group">
@@ -22,17 +22,15 @@
       </div>
     </form>
   </div>
+{{#if projects.length}}
+<div>
+  <h3>Current Projects:</h3>
+  {{#each projects as |project|}}
+    <h4><a href="/projects/{{project.id}}">{{project.name}}</a></h4>
+  {{/each}}
+</div>
+{{/if}}
+</div>
 
-  <script>
-document.querySelector('.project-form').addEventListener('submit', event => {
-  event.preventDefault();
 
-  const projectName = document.querySelector('#project-name').value;
-  const projectFunding = document.querySelector('#project-funding').value;
-  const projectDescription = document.querySelector('#project-description').value;
-
-  console.log('Project Name:', projectName);
-  console.log('Needed Funding:', projectFunding);
-  console.log('Description:', projectDescription);
-});
-</script>
+<script src="/js/project.js"></script>

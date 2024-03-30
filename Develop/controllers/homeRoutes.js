@@ -53,7 +53,7 @@ router.get('/profile', withAuth, async (req, res) => {
       console.log("HEREE", user);
   
       res.render('profile', {
-        user,
+        ...user,
         loggedIn: req.session.loggedIn,
       });
     } catch (err) {
