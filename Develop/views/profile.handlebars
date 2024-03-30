@@ -1,0 +1,24 @@
+
+
+<div class="row justify-space-between-md">
+  <div class="project">
+    <h1>Welcome {{user.name}}!</h1>
+    <h4>Create a New Project:</h4>
+    <form class="form project-form">
+      <div class="form-group">
+        <label for="project-name">Project name::</label>
+        <input class="form-input" type="text" id="project-name" />
+      </div>
+      <div class="form-group">
+        <label for="project-funding">needed funding($):</label>
+        <input class="form-input" type="number" id="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-description">description:</label>
+        <textarea class="form-input" id="project-description"></textarea>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create</button>
+      </div>
+    </form>
+  </div>
